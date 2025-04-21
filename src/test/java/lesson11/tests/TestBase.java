@@ -19,12 +19,9 @@ public class TestBase {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
+
     @AfterEach
-    void addAttachments(){
+    void addAttachments() {
         Attach.screenshotAs("Last screenshot");
-    }
-    @AfterEach
-    void tearDown(){
-        closeWebDriver();
     }
 }
